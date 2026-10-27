@@ -20,3 +20,12 @@
 .why-grid,.steps-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:28px}.why-grid article,.steps-grid article{background:#fffaf4;border:1px solid #e8d9c9;border-radius:16px;padding:25px}.why-grid article>span,.steps-grid article>b{color:#a77e54;font-size:1.3rem}.why-grid h3,.steps-grid h3{margin:12px 0 8px}.why-grid p,.steps-grid p{color:#7a6b5e;line-height:1.8;font-size:.92rem}.booking-steps{text-align:center}.booking-steps h2{font-size:clamp(2rem,4vw,3rem)}.hours-note{margin-top:30px;color:#765a43;font-weight:600}.consult{margin-top:18px;max-width:300px}.consult p{line-height:1.7;color:#d9c9ba}.consult .text-link{color:#f2dfc8}
 @media(max-width:900px){.specialty-grid{grid-template-columns:1fr}.specialty-card{grid-template-columns:.8fr 1.2fr}.why-grid,.steps-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.video-gallery{grid-template-columns:1fr 1fr}.video-gallery>div{grid-column:1/-1}}
 @media(max-width:560px){.specialty-card{grid-template-columns:1fr}.specialty-card>img{height:220px;min-height:0}.specialty-card>div{padding:20px}.demo-price-grid{grid-template-columns:1fr}.why-grid,.steps-grid{grid-template-columns:1fr 1fr}.video-gallery{grid-template-columns:1fr 1fr}.video-tile{min-height:145px}.price-item{gap:8px}}
+.video-tile video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  background: #f5f0eb;
+  margin-bottom: 12px;
+}
