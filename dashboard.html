@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LAVÉA | لوحة التحكم</title><link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="index.html">LAVÉA<span>BEAUTY LOUNGE · MAKKAH</span></a>
+    <div class="side-label">القائمة الرئيسية</div>
+    <nav id="sideNav">
+      <a href="#overview" class="nav-link active" data-view="overview"><span>⌂</span> نظرة عامة</a>
+      <a href="#appointments" class="nav-link" data-view="appointments"><span>▦</span> الحجوزات</a>
+      <a href="#services" class="nav-link" data-view="services"><span>✧</span> الخدمات والأسعار</a>
+      <a href="#customers" class="nav-link" data-view="customers"><span>♙</span> العميلات</a>
+      <a href="#reports" class="nav-link" data-view="reports"><span>◷</span> التقارير</a>
+    </nav>
+    <div class="sidebar-bottom"><div class="privacy-note"><span>✦</span><div><strong>مساحتكِ الإدارية</strong><small>إدارة راقية، بكل سهولة</small></div></div><button id="logoutBtn" class="logout">↪ تسجيل الخروج</button></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><p class="eyebrow" id="pageEyebrow">LAVÉA · مساحة الإدارة</p><h1 id="pageTitle">صباح الجمال</h1><p class="subheading" id="pageSubtitle">إليكِ ملخص نشاط الصالون اليوم.</p></div><div class="top-actions"><span class="live-dot">● مساحة الإدارة</span><div class="owner"><div class="avatar">L</div><div><strong>LAVÉA</strong><small>إدارة الصالون</small></div></div></div></header>
+    <div id="notice" class="notice" role="status" hidden></div>
+    <section class="view active" id="view-overview">
+      <div class="welcome-card"><div><span class="welcome-kicker">YOUR BEAUTY BUSINESS, IN ONE PLACE</span><h2>كل التفاصيل الجميلة، في مكان واحد.</h2><p>تابعي الحجوزات والخدمات وأداء الصالون من لوحة واحدة.</p></div><div class="welcome-mark">L<span>✧</span></div></div>
+      <div class="stats-grid">
+        <article class="stat-card"><div class="stat-top"><span>حجوزات اليوم</span><span class="stat-icon">▦</span></div><strong id="todayCount">—</strong><small>حسب تاريخ اليوم</small></article>
+        <article class="stat-card"><div class="stat-top"><span>بانتظار التأكيد</span><span class="stat-icon">◷</span></div><strong id="pendingCount">—</strong><small>تحتاج إلى مراجعة</small></article>
+        <article class="stat-card"><div class="stat-top"><span>حجوزات مؤكدة</span><span class="stat-icon">✓</span></div><strong id="confirmedCount">—</strong><small>إجمالي الحجوزات المؤكدة</small></article>
+        <article class="stat-card featured"><div class="stat-top"><span>إيراد تقديري مؤكد</span><span class="stat-icon">ر.س</span></div><strong id="revenueTotal">—</strong><small>تقدير من أسعار الخدمات الحالية</small></article>
+      </div>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">LATEST ACTIVITY</p><h2>أحدث الحجوزات</h2></div><button class="text-button" data-goto="appointments">عرض جميع الحجوزات ←</button></div><div class="table-wrap"><table><thead><tr><th>العميلة</th><th>الخدمة</th><th>التاريخ</th><th>الوقت</th><th>الحالة</th><th>الإجراء</th></tr></thead><tbody id="recentBookings"><tr><td colspan="6" class="empty-cell">جارٍ تحميل البيانات…</td></tr></tbody></table></div></section>
+    </section>
+    <section class="view" id="view-appointments"><section class="panel"><div class="panel-heading"><div><p class="eyebrow">APPOINTMENT MANAGEMENT</p><h2>إدارة الحجوزات</h2><p class="panel-subtitle">راجعي تفاصيل المواعيد وحدّثي حالة الحجز.</p></div><button id="refreshBtn" class="secondary-button">↻ تحديث البيانات</button></div><div class="filters"><input id="bookingSearch" type="search" placeholder="ابحثي بالاسم أو رقم الجوال أو الخدمة…"><select id="statusFilter"><option value="all">كل الحالات</option><option value="Pending">بانتظار التأكيد</option><option value="Confirmed">مؤكد</option><option value="Cancelled">ملغي</option><option value="Completed">مكتمل</option></select><input id="dateFilter" type="date" aria-label="تصفية حسب التاريخ"></div><div class="table-wrap"><table><thead><tr><th>العميلة</th><th>الجوال</th><th>الخدمة</th><th>التاريخ</th><th>الوقت</th><th>الحالة</th><th>الإجراءات</th></tr></thead><tbody id="bookingsTable"><tr><td colspan="7" class="empty-cell">جارٍ تحميل الحجوزات…</td></tr></tbody></table></div><p class="table-foot" id="bookingCountLabel"></p></section></section>
+    <section class="view" id="view-services"><section class="panel"><div class="panel-heading"><div><p class="eyebrow">SERVICE MENU</p><h2>الخدمات والأسعار</h2><p class="panel-subtitle">أضيفي الخدمات أو عدّلي أسعارها ومدتها.</p></div></div><form id="serviceForm" class="service-form"><input id="serviceName" type="text" placeholder="اسم الخدمة" required maxlength="100"><input id="servicePrice" type="number" placeholder="السعر (ريال)" min="0" step="0.01" required><input id="serviceDuration" type="number" placeholder="المدة بالدقائق" min="1" required><button class="primary-button" type="submit">＋ إضافة خدمة</button><button class="secondary-button" id="cancelEditBtn" type="button" hidden>إلغاء التعديل</button></form><div id="servicesList" class="service-grid"><p class="empty-cell">جارٍ تحميل الخدمات…</p></div></section></section>
+    <section class="view" id="view-customers"><section class="panel"><div class="panel-heading"><div><p class="eyebrow">CLIENT RELATIONSHIPS</p><h2>العميلات</h2><p class="panel-subtitle">قائمة مستخلصة من الحجوزات المسجلة في النظام.</p></div></div><div class="filters"><input id="customerSearch" type="search" placeholder="ابحثي عن عميلة بالاسم أو الجوال…"></div><div class="table-wrap"><table><thead><tr><th>العميلة</th><th>رقم الجوال</th><th>عدد الحجوزات</th><th>آخر موعد مسجل</th></tr></thead><tbody id="customersTable"><tr><td colspan="4" class="empty-cell">جارٍ تحميل بيانات العميلات…</td></tr></tbody></table></div></section></section>
+    <section class="view" id="view-reports"><div class="stats-grid report-stats"><article class="stat-card"><div class="stat-top"><span>إجمالي الحجوزات</span><span class="stat-icon">▦</span></div><strong id="reportTotal">—</strong><small>كل الحالات المسجلة</small></article><article class="stat-card"><div class="stat-top"><span>الخدمات المتاحة</span><span class="stat-icon">✧</span></div><strong id="reportServices">—</strong><small>حسب جدول الخدمات</small></article><article class="stat-card"><div class="stat-top"><span>العميلات المسجلات</span><span class="stat-icon">♙</span></div><strong id="reportCustomers">—</strong><small>أرقام مميزة في الحجوزات</small></article></div><section class="panel"><div class="panel-heading"><div><p class="eyebrow">BUSINESS SNAPSHOT</p><h2>ملخص الحالات</h2></div><button id="exportBookingsBtn" class="secondary-button">تنزيل الحجوزات CSV</button></div><div id="statusReport" class="report-list"></div><p class="report-note">الإيرادات المعروضة تقديرية، محسوبة من سعر الخدمة الحالي للحجوزات المؤكدة، وليست سجلًا محاسبيًا للمدفوعات الفعلية.</p></section></section>
+    <footer class="footer-note">LAVÉA <span>·</span> لوحة الإدارة <span>·</span> خصوصية العميلات أولويتنا</footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="dashboard.js"></script>
+</body></html>

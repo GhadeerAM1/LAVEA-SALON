@@ -1,0 +1,131 @@
+<title>LAVÉA Services</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<style>
+    .services-page {
+        padding: 40px;
+    }
+
+    .service-form {
+        background: white;
+        padding: 25px;
+        border-radius: 16px;
+        margin-bottom: 30px;
+    }
+
+    .service-form input {
+        padding: 12px;
+        margin-right: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+    }
+
+    .service-form button {
+        padding: 12px 18px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background: #222;
+        color: white;
+    }
+
+    .service-card {
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .service-info h3 {
+        margin: 0 0 6px;
+    }
+
+    .service-info p {
+        margin: 0;
+        color: #888;
+    }
+
+    .delete-btn {
+        border: none;
+        padding: 9px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        background: #fbe9e9;
+        color: #a33a3a;
+    }
+</style>
+<aside class="sidebar">
+
+    <div class="brand">
+        LAVÉA
+        <span>BEAUTY SALON</span>
+    </div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#">Appointments</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="#">Customers</a>
+    </nav>
+
+    <button id="logoutBtn" class="logout">
+        Log out
+    </button>
+
+</aside>
+
+
+<main class="main">
+
+    <header class="topbar">
+        <div>
+            <p class="eyebrow">MANAGEMENT</p>
+            <h1>Services</h1>
+        </div>
+    </header>
+
+
+    <section class="services-page">
+
+        <div class="service-form">
+
+            <h2>Add New Service</h2>
+
+            <input
+                type="text"
+                id="serviceName"
+                placeholder="Service name"
+            >
+
+            <input
+                type="number"
+                id="servicePrice"
+                placeholder="Price"
+            >
+
+            <input
+                type="number"
+                id="serviceDuration"
+                placeholder="Duration (minutes)"
+            >
+
+            <button id="addServiceBtn">
+                Add Service
+            </button>
+
+        </div>
+
+
+        <div id="servicesList"></div>
+
+    </section>
+
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="services.js"></script>
